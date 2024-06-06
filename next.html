@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #040405;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inventory-container {
+            background-color: #040405;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="inventory-container">
+        <h2 class="text-center mb-4">DETAILS OF INVENTORY MANAGEMENT SYSTEM</h2>
+        <form id="inventoryForm">
+            <div class="form-group">
+                <label for="assetNo">Asset No</label>
+                <input type="text" id="assetNo" class="form-control" placeholder="Asset No">
+            </div>
+            <div class="form-group">
+                <label for="assetName">Asset Name</label>
+                <input type="text" id="assetName" class="form-control" placeholder="Asset Name">
+            </div>
+            <div class="form-group">
+                <label for="deviceType">Type of Device</label>
+                <input type="text" id="deviceType" class="form-control" placeholder="Type of Device">
+            </div>
+            <div class="form-group">
+                <label for="mac">Mac</label>
+                <input type="text" id="mac" class="form-control" placeholder="Mac">
+            </div>
+            <button type="button" class="btn btn-primary btn-block mt-4" onclick="submitDetails()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitDetails() {
+            var assetNo = document.getElementById("assetNo").value;
+            var assetName = document.getElementById("assetName").value;
+            var deviceType = document.getElementById("deviceType").value;
+            var mac = document.getElementById("mac").value;
+
+            console.log(`Asset No: ${assetNo}, Asset Name: ${assetName}, Type of Device: ${deviceType}, Mac: ${mac}`);
+
+            var form = document.getElementById("inventoryForm");
+            form.innerHTML = "<h3 class='text-center mt-4'>Thank You!</h3>";
+        }
+    </script>
+</body>
+</html>
