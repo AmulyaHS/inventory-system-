@@ -36,7 +36,12 @@
             </div>
             <div class="form-group">
                 <label for="deviceType">Type of Device</label>
-                <input type="text" id="deviceType" class="form-control" placeholder="Type of Device" required>
+                <select id="deviceType" class="form-control" required>
+                    <option value="" disabled selected>Select Device Type</option>
+                    <option value="Desktop">Desktop</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Mobile">Mobile</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="mac">Mac</label>
@@ -62,7 +67,8 @@
 
             console.log(`Asset No: ${assetNo}, Asset Name: ${assetName}, Type of Device: ${deviceType}, Mac: ${mac}`);
 
-            form.innerHTML = "<h3 class='text-center mt-4'>Thank You!</h3>";
+            // Redirect to details.html with form data as URL parameters
+            window.location.href = `details.html?assetNo=${assetNo}&assetName=${assetName}&deviceType=${deviceType}&mac=${mac}`;
             return false; // Prevent default form submission to avoid page reload
         }
     </script>
